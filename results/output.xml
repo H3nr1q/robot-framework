@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231118 00:10:32.201" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot-Framework" source="C:\Projetos\Estudos\robot-framework">
+<suite id="s1-s1" name="Helloword" source="C:\Projetos\Estudos\robot-framework\helloword.robot">
+<test id="s1-s1-t1" name="Valid Login" line="10">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231118 00:10:32.631" level="INFO">Opening browser 'Chrome' to base url 'http://google.com'.</msg>
+<status status="PASS" starttime="20231118 00:10:32.631" endtime="20231118 00:10:40.612"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Login Page</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231118 00:10:40.817" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231118 00:10:40.818" level="FAIL">Title should have been 'Login Page' but was 'Google'.</msg>
+<status status="FAIL" starttime="20231118 00:10:40.613" endtime="20231118 00:10:40.827"/>
+</kw>
+<status status="FAIL" starttime="20231118 00:10:32.631" endtime="20231118 00:10:40.828"/>
+</kw>
+<kw name="Input Username">
+<arg>demo</arg>
+<status status="NOT RUN" starttime="20231118 00:10:40.829" endtime="20231118 00:10:40.829"/>
+</kw>
+<kw name="Input Password">
+<arg>mode</arg>
+<status status="NOT RUN" starttime="20231118 00:10:40.830" endtime="20231118 00:10:40.831"/>
+</kw>
+<kw name="Submit Credentials">
+<status status="NOT RUN" starttime="20231118 00:10:40.832" endtime="20231118 00:10:40.832"/>
+</kw>
+<kw name="Welcome Page Should Be Open">
+<status status="NOT RUN" starttime="20231118 00:10:40.833" endtime="20231118 00:10:40.833"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231118 00:10:40.833" endtime="20231118 00:10:43.102"/>
+</kw>
+<status status="FAIL" starttime="20231118 00:10:32.631" endtime="20231118 00:10:43.104">Title should have been 'Login Page' but was 'Google'.</status>
+</test>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="FAIL" starttime="20231118 00:10:32.272" endtime="20231118 00:10:43.108"/>
+</suite>
+<status status="FAIL" starttime="20231118 00:10:32.210" endtime="20231118 00:10:43.116"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robot-Framework">Robot-Framework</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Helloword">Robot-Framework.Helloword</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
