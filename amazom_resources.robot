@@ -7,11 +7,17 @@ ${MENU_ELETRONICOS}     //a[@href='/Eletronicos-e-Tecnologia/b/?ie=UTF8&node=162
 ${SPAN_ELETRONICOS}    //span[@class='a-size-base a-color-base apb-browse-refinements-indent-1 a-text-bold'][contains(.,'Eletrônicos e Tecnologia')]
 ${TEXT_TITLE_ELETRONICOS}    Eletrônicos e Tecnologia | Amazon.com.br
 ${NOME_CATEGORIA}    Computadores e InfoElement Should Be Visible
+    
 *** Keywords ***
 Abrir o navegador    
     Open Browser    browser=chrome
     Maximize Browser Window
-    # Close Browser 
+    
+
+Fechar o navegador
+    Capture Page Screenshot
+    Close Browser 
+
 
 Acessar o home page do site da Amazon.com.br
     Go To    url=${URL}
@@ -28,3 +34,14 @@ Verificar se o título fica "${TITULO}"
 
 Verificar se aparece a categoria "${NOME_CATEGORIA}"
     Element Should Be Visible    locator=//img[contains(@alt,'${NOME_CATEGORIA}')]    
+
+Digitar o nome de produto "${PRODUTO}" no campo de pesquisa
+    Input Text    locator=twotabsearchtextbox    text='${PRODUTO}'
+
+Clicar no botão pesquisa
+    Click Element    locator=nav-search-submit-button
+
+Verificar o resultado da pesquisa se esta listando o produto "${PRODUTO}"
+    Wait Until Element Is Visible    locator=//span[@class='a-size-base-plus a-color-base a-text-normal'][contains(.,'${PRODUTO}')]
+    
+                
